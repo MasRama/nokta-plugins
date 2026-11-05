@@ -1,0 +1,66 @@
+api = 1
+id = "prayer-times"
+name = "Prayer times"
+description = "The five daily prayer times for your city, a countdown to the next and an alert when it comes; worked out offline"
+version = "1.0.0"
+author = "Nokta"
+homepage = "https://github.com/MasRama/nokta-plugins/tree/main/plugins/prayer-times"
+icon = "nokta-alarm"
+
+[run]
+command = ["python3", "prayer.py"]
+windows = ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "prayer.ps1"]
+# Once a minute, for the countdown and an alert on time.
+every = 60
+
+[[options]]
+key = "location"
+title = "City"
+subtitle = "A city, or coordinates like -6.2,106.8; a city is looked up once on open-meteo.com"
+type = "text"
+default = "Jakarta"
+
+[[options]]
+key = "method"
+title = "Method"
+type = "choice"
+choices = ["Kemenag (Indonesia)", "JAKIM (Malaysia)", "Muslim World League", "Umm al-Qura (Makkah)", "Egypt", "ISNA (North America)"]
+default = "Kemenag (Indonesia)"
+
+[[options]]
+key = "asr"
+title = "Asr"
+type = "choice"
+choices = ["Shafi'i", "Hanafi"]
+default = "Shafi'i"
+
+[[options]]
+key = "language"
+title = "Language"
+type = "choice"
+choices = ["Indonesia", "English"]
+default = "Indonesia"
+
+[[options]]
+key = "alert"
+title = "Alert at each prayer time"
+type = "bool"
+default = true
+
+[[options]]
+key = "remind_minutes"
+title = "Remind me before"
+subtitle = "Minutes before each prayer; 0 for no reminder"
+type = "int"
+min = 0
+max = 60
+default = 0
+
+[[options]]
+key = "badge_minutes"
+title = "Countdown in the closed notch"
+subtitle = "From this many minutes before; 0 for none"
+type = "int"
+min = 0
+max = 180
+default = 30
