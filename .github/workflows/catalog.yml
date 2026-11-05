@@ -34,6 +34,8 @@ jobs:
       # The runner has PowerShell 7; Windows runs it with Windows PowerShell 5.1.
       - name: prayer-times gives the same times on Linux and Windows
         run: python3 tools/check_prayer_times.py
+      - name: rain-soon says the same on Linux and Windows
+        run: python3 tools/check_rain_soon.py
 
   publish:
     name: Publish

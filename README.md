@@ -9,6 +9,7 @@ list it opens, a badge in the closed notch, an alert.
 | [`days-until`](plugins/days-until) | The days left until a date you pick, with a badge | Linux, macOS, Windows |
 | [`hello`](plugins/hello) | A greeting with a list of links, and two options | Linux, macOS, Windows |
 | [`prayer-times`](plugins/prayer-times) | The five daily prayer times for your city, a countdown in the closed notch and an alert on time; worked out offline | Linux, macOS, Windows |
+| [`rain-soon`](plugins/rain-soon) | When rain is coming in the next two hours, with a countdown and one alert per shower | Linux, macOS, Windows |
 | [`site-status`](plugins/site-status) | Whether a site answers: a badge and an alert while it is down | Linux, macOS, Windows |
 | [`water`](plugins/water) | Glasses of water today with `+1` and `Undo`; it keeps running | Linux, macOS, Windows (Python) |
 
