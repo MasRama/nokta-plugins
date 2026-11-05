@@ -1,0 +1,63 @@
+name: Catalog
+
+# A pull request is checked: every plugin's plugin.toml and files, its shell
+# scripts, and one run of each. A push to main also publishes the catalog to
+# the `catalog` branch, which Nokta reads:
+# https://raw.githubusercontent.com/MasRama/nokta-plugins/catalog/index.json
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalog-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check every plugin
+        run: python3 tools/build_index.py
+      - name: Shell scripts
+        run: |
+          files=$(git ls-files 'plugins/*.sh')
+          [ -z "$files" ] || shellcheck $files
+      - name: Run each plugin once
+        run: python3 tools/run_once.py
+
+  publish:
+    name: Publish
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Build the catalog
+        run: python3 tools/build_index.py --out "$RUNNER_TEMP/catalog"
+      # One commit, force-pushed: the branch holds only what Nokta reads, so
+      # index.json and the files it lists always change together.
+      - name: Publish to the catalog branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd "$RUNNER_TEMP/catalog"
+          cat > README.md << EOF
+          # Nokta plugin catalog
+
+          Built from [main](https://github.com/${GITHUB_REPOSITORY}/tree/${GITHUB_SHA}) by the Catalog workflow. Do not edit this branch.
+          EOF
+          git init -q -b catalog
+          git add -A
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Catalog from ${GITHUB_SHA}"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" catalog
