@@ -1,0 +1,185 @@
+{
+ "api": 1,
+ "plugins": [
+  {
+   "id": "days-until",
+   "name": "Days until",
+   "description": "Counts down the days to a date you pick, with a badge in the closed notch",
+   "version": "1.0.0",
+   "author": "Nokta",
+   "homepage": "https://github.com/MasRama/nokta-plugins/tree/main/plugins/days-until",
+   "icon": "nokta-calendar",
+   "unix": true,
+   "windows": true,
+   "files": [
+    {
+     "path": "days.ps1",
+     "size": 1140,
+     "sha256": "a667e638202295ec993252d62aaf70a585a844d68744bbe9649e5c6adb94e459",
+     "executable": false
+    },
+    {
+     "path": "days.sh",
+     "size": 1342,
+     "sha256": "31d4efe351a490f1c42cbc3e085a6e75cfa0a43507bb4c1c0c659bc45a927289",
+     "executable": true
+    },
+    {
+     "path": "plugin.toml",
+     "size": 765,
+     "sha256": "7f37c2a7262708704965a9cd3409b70f908eadd03a0c2b8d7b84a7aa4db2ce37",
+     "executable": false
+    }
+   ]
+  },
+  {
+   "id": "hello",
+   "name": "Hello",
+   "description": "Greets you and lists a few links",
+   "version": "1.0.0",
+   "author": "Nokta",
+   "homepage": "https://github.com/MasRama/nokta-plugins/tree/main/plugins/hello",
+   "icon": "nokta-plugin",
+   "unix": true,
+   "windows": true,
+   "files": [
+    {
+     "path": "hello.ps1",
+     "size": 786,
+     "sha256": "01c6b842b4c50ad970bc8da3e90ec801adfac1bc67babb770341a82f4d57a790",
+     "executable": false
+    },
+    {
+     "path": "hello.sh",
+     "size": 676,
+     "sha256": "d9a848a644b6347a61e0919bb684fc994f9e9ab2dbf1df507e1647d7a3d7e6df",
+     "executable": true
+    },
+    {
+     "path": "plugin.toml",
+     "size": 539,
+     "sha256": "57f6130f5060d830264d410848d3744aaf5500bb84906bbbd011159438f6bc45",
+     "executable": false
+    }
+   ]
+  },
+  {
+   "id": "prayer-times",
+   "name": "Prayer times",
+   "description": "The five daily prayer times for your city, a countdown to the next and an alert when it comes; worked out offline",
+   "version": "1.0.0",
+   "author": "Nokta",
+   "homepage": "https://github.com/MasRama/nokta-plugins/tree/main/plugins/prayer-times",
+   "icon": "nokta-alarm",
+   "unix": true,
+   "windows": true,
+   "files": [
+    {
+     "path": "plugin.toml",
+     "size": 1584,
+     "sha256": "ccf9b1428042e3a79022b6717490d19a31e01be3c9c9125aaa70b0fd6c9af33a",
+     "executable": false
+    },
+    {
+     "path": "prayer.ps1",
+     "size": 8600,
+     "sha256": "67d5a0a8fca18c6f022e2bb824961f0d7adce1047b01bd1222a68f57120aedeb",
+     "executable": false
+    },
+    {
+     "path": "prayer.py",
+     "size": 8589,
+     "sha256": "6a07ea283d9ec6c5be0b5a2890383d69ecb2bef27dcec5ec4a468ac78cd7d687",
+     "executable": false
+    }
+   ]
+  },
+  {
+   "id": "rain-soon",
+   "name": "Rain soon",
+   "description": "Says when rain is coming in the next two hours, with a countdown in the closed notch and one alert per shower; from open-meteo.com",
+   "version": "1.0.0",
+   "author": "Nokta",
+   "homepage": "https://github.com/MasRama/nokta-plugins/tree/main/plugins/rain-soon",
+   "icon": "nokta-weather",
+   "unix": true,
+   "windows": true,
+   "files": [
+    {
+     "path": "plugin.toml",
+     "size": 1277,
+     "sha256": "ea66d3593ea6c1910bc1a6527d7ca4f5a80f6917dd0954af6b34604f6c74fe65",
+     "executable": false
+    },
+    {
+     "path": "rain.ps1",
+     "size": 7637,
+     "sha256": "7a4b8fbc2b431e9d090d18062bf66e2eca225bdc8779ced11e6a090e0e4db25a",
+     "executable": false
+    },
+    {
+     "path": "rain.py",
+     "size": 7846,
+     "sha256": "e393e6527dae675b13e87dfa53adfcd03fd2fcf9500625d04bd2c32102df83c0",
+     "executable": false
+    }
+   ]
+  },
+  {
+   "id": "site-status",
+   "name": "Site status",
+   "description": "Checks that a website answers, and says when it goes down",
+   "version": "1.0.0",
+   "author": "Nokta",
+   "homepage": "https://github.com/MasRama/nokta-plugins/tree/main/plugins/site-status",
+   "icon": "nokta-link",
+   "unix": true,
+   "windows": true,
+   "files": [
+    {
+     "path": "check.ps1",
+     "size": 1409,
+     "sha256": "698f344230fb0bd882598df3b97a6aaeefe668ccba8a5cdb494aedcd30a7f926",
+     "executable": false
+    },
+    {
+     "path": "check.sh",
+     "size": 1276,
+     "sha256": "1d46f8562de0771f5f3b77057ce162975b1e7c19f68ec554a8660168f97a990c",
+     "executable": true
+    },
+    {
+     "path": "plugin.toml",
+     "size": 657,
+     "sha256": "a7be985cd7de4d43763529c8d8da5256f5e6f4f59181cca2c8df7bf6b3d5a784",
+     "executable": false
+    }
+   ]
+  },
+  {
+   "id": "water",
+   "name": "Water",
+   "description": "Counts the glasses you drink today; one keeps running and hears its buttons",
+   "version": "1.0.0",
+   "author": "Nokta",
+   "homepage": "https://github.com/MasRama/nokta-plugins/tree/main/plugins/water",
+   "icon": "nokta-plugin",
+   "unix": true,
+   "windows": true,
+   "files": [
+    {
+     "path": "plugin.toml",
+     "size": 578,
+     "sha256": "3acb9cf18c16603e6dccfdc5acf1ab69370c33bc9c3143c3cc758a6617bfe8d7",
+     "executable": false
+    },
+    {
+     "path": "water.py",
+     "size": 1781,
+     "sha256": "f749a4329fd157d61a480675095a5c2f15e043e4200d8eb6f4615e2db7e296dd",
+     "executable": false
+    }
+   ]
+  }
+ ]
+}

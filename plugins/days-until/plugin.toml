@@ -1,0 +1,33 @@
+api = 1
+id = "days-until"
+name = "Days until"
+description = "Counts down the days to a date you pick, with a badge in the closed notch"
+version = "1.0.0"
+author = "Nokta"
+homepage = "https://github.com/MasRama/nokta-plugins/tree/main/plugins/days-until"
+icon = "nokta-calendar"
+
+[run]
+command = ["./days.sh"]
+windows = ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "days.ps1"]
+# Once an hour is enough to roll over at midnight within the hour.
+every = 3600
+
+[[options]]
+key = "date"
+title = "Date"
+subtitle = "As YYYY-MM-DD"
+type = "text"
+default = "2027-01-01"
+
+[[options]]
+key = "label"
+title = "What happens then"
+type = "text"
+default = "New year"
+
+[[options]]
+key = "badge"
+title = "Days in the closed notch"
+type = "bool"
+default = true

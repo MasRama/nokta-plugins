@@ -1,0 +1,55 @@
+api = 1
+id = "rain-soon"
+name = "Rain soon"
+description = "Says when rain is coming in the next two hours, with a countdown in the closed notch and one alert per shower; from open-meteo.com"
+version = "1.0.0"
+author = "Nokta"
+homepage = "https://github.com/MasRama/nokta-plugins/tree/main/plugins/rain-soon"
+icon = "nokta-weather"
+
+[run]
+command = ["python3", "rain.py"]
+windows = ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "rain.ps1"]
+# The forecast comes in 15-minute steps; every 10 minutes keeps up with it.
+every = 600
+
+[[options]]
+key = "location"
+title = "City"
+subtitle = "A city, or coordinates like -6.2,106.8; sent to open-meteo.com"
+type = "text"
+default = "Jakarta"
+
+[[options]]
+key = "lead_minutes"
+title = "Alert this early"
+subtitle = "Minutes before the rain: the alert and the countdown"
+type = "int"
+min = 15
+max = 120
+default = 30
+
+[[options]]
+key = "alert"
+title = "Alert before rain"
+type = "bool"
+default = true
+
+[[options]]
+key = "badge"
+title = "Countdown in the closed notch"
+type = "bool"
+default = true
+
+[[options]]
+key = "show_dry"
+title = "Show a row while it stays dry"
+type = "bool"
+default = true
+
+[[options]]
+key = "language"
+title = "Language"
+type = "choice"
+choices = ["Indonesia", "English"]
+default = "Indonesia"
